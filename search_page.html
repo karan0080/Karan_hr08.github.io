@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karan Kids Music 🎵</title>
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Comic Neue', cursive;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 15px #00ffe1;
+    }
+
+    header h1 {
+      font-size: 2em;
+      color: #00ffe1;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+
+    .tagline {
+      font-size: 1em;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .search-box {
+      background: #0a0a0a;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .search-box form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-box input {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #00ffe1;
+      font-size: 16px;
+      outline: none;
+      background: #111;
+      color: #fff;
+    }
+
+    .search-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00ffe1;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .search-box button:hover {
+      background-color: #00bfa6;
+    }
+
+    .section-title {
+      font-size: 1.6em;
+      margin: 20px 0;
+      text-align: center;
+      color: #39ff14;
+      text-shadow: 0 0 10px #39ff14;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .song-card {
+      background: #111;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 225, 0.15);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .song-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(0, 255, 225, 0.3);
+    }
+
+    .song-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .song-title {
+      text-align: center;
+      background: #000;
+      padding: 10px;
+      font-size: 1em;
+      color: #00ffe1;
+    }
+
+    .extra-tools {
+      padding: 30px 20px;
+      text-align: center;
+      background: #0a0a0a;
+    }
+
+    .tool-card {
+      display: inline-block;
+      border: 2px dashed #00ffe1;
+      border-radius: 10px;
+      padding: 20px;
+      background: #111;
+      max-width: 500px;
+      color: #ccc;
+    }
+
+    .tool-card h3 {
+      margin-bottom: 8px;
+      color: #00ffe1;
+      font-size: 1.3em;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      background: #00ffe1;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .tool-card a:hover {
+      background: #00bfa6;
+    }
+
+    .location-map {
+      text-align: center;
+      padding: 30px 20px;
+      background: #0f0f0f;
+    }
+
+    .location-map h2 {
+      color: #39ff14;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #39ff14;
+    }
+
+    .location-map iframe {
+      width: 95%;
+      max-width: 1000px;
+      height: 500px;
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      display: block;
+      margin: 20px auto 10px;
+    }
+
+    .map-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background: #00ffe1;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .map-btn:hover {
+      background: #00bfa6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background: #111;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #00ffe1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5em; }
+      .section-title { font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.ibb.co/bRQ3H1Ss/karan-hr08-20250618-0001.jpg" alt="Logo" />
+    <h1>Karan Kids Music 🎵</h1>
+    <p class="tagline">Fun Songs for Happy Kids! 😊</p>
+  </header>
+
+  <div class="search-box">
+    <form id="searchForm" onsubmit="return false;">
+      <input type="text" id="searchInput" placeholder="🔍 Find your favorite song..." />
+      <button type="submit" id="searchBtn">🔍</button>
+    </form>
+  </div>
+
+  <section class="extra-tools">
+    <h2>🎉 Try a Fun Face‑Swap Tool</h2>
+    <div class="tool-card">
+      <h3>AIFaceSwap.io</h3>
+      <p>Swap faces in photos, GIFs, or videos — free and no watermark!</p>
+      <a href="https://aifaceswap.io" target="_blank" rel="noopener noreferrer">Try it Now</a>
+    </div>
+  </section>
+
+  <div id="allSections"></div>
+
+  <section class="location-map">
+    <h2>📍 My Location</h2>
+    <p>Visit me here or explore it on Google Maps:</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.780823648313!2d77.23151731508304!3d28.610684082429526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd303e8fbc7f%3A0x6713768dcf014ce9!2sDelhi!5e0!3m2!1sen!2sin!4v1718888888888"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <a href="https://maps.app.goo.gl/TgjL1Wm8eqdKWsEv6" target="_blank" class="map-btn">🔍 Open in Google Maps</a>
+  </section>
+
+  <footer>
+    🧒🎶 Made for young music fans!<br />
+    &copy; 2025 Karan_hr08__ Music Hub<br />
+    📷 Follow us on Instagram:
+    <a href="https://www.instagram.com/karan_hr08__" target="_blank">@karan_hr08__</a>
+  </footer>
+
+  <script>
+    const songs = [
+      { title: "Happy Song 😊", url: "https://www.youtube.com/embed/iMz31mRcb2Y" },
+      { title: "Clap and Dance 🎉", url: "https://www.youtube.com/embed/gsK1wsNkkCY" },
+      { title: "Fun in Haryana 🚜", url: "https://www.youtube.com/embed/rCOWo_CTYtc" },
+      { title: "Colorful Beats 🌈", url: "https://www.youtube.com/embed/Llav5_-5idA" },
+      { title: "Magic Music 🪄", url: "https://www.youtube.com/embed/fO3NXAwDwMY" },
+      { title: "Jump Around 🎈", url: "https://www.youtube.com/embed/ubTPROF40Eo" },
+      { title: "Story Time 🎬", url: "https://www.youtube.com/embed/9O7RT6ggTJA" },
+      { title: "Bhangra Kids 💃", url: "https://www.youtube.com/embed/A5bPMEHkF6E" }
+    ];
+
+    function renderSections(songList) {
+      const container = document.getElementById('allSections');
+      container.innerHTML = '';
+      const sections = Math.ceil(songList.length / 4);
+
+      for (let i = 0; i < sections; i++) {
+        const group = songList.slice(i * 4, i * 4 + 4);
+        const sectionHTML = `
+          <section>
+            <div class="section-title">📚 Fun Section ${i + 1}</div>
+            <div class="video-grid">
+              ${group.map(song => `
+                <div class="song-card">
+                  <iframe src="${song.url}" allowfullscreen></iframe>
+                  <div class="song-title">${song.title}</div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+        container.innerHTML += sectionHTML;
+      }
+    }
+
+    document.getElementById('searchForm').addEventListener('submit', function () {
+      const keyword = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = songs.filter(song => song.title.toLowerCase().includes(keyword));
+      renderSections(filtered);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    renderSections(songs);
+  </script>
+
+</body>
+</html>
